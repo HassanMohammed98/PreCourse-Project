@@ -4,7 +4,7 @@
  *
  * If you'd like to run your function to test it yourself,
  * uncomment it from the bottom of this file, then run this
- * file with `node project.js`.
+ * fide projectle with `no.js`.
  *
  * Good luck!
  */
@@ -20,8 +20,14 @@
  */
 function sumOdds(numbers) {
   // Your code here
+  let sum = 0;
+  let x = numbers.filter((odds) => odds % 2);
+  x.forEach((nums) => {
+    sum += nums;
+  });
+  return sum;
 }
-// console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
+console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
 /**
  * characterCount(string, c):
@@ -38,8 +44,10 @@ function sumOdds(numbers) {
  */
 function characterCount(string, c) {
   // Your code here
+  let sent = string.toLowerCase().split("");
+  return sent.filter((str) => str === c.toLowerCase()).length;
 }
-// console.log(characterCount("Character Count is clever", "c"));
+console.log(characterCount("Character Count is clever", "c"));
 
 /**
  * largestIncrement(numbers):
@@ -59,6 +67,10 @@ function characterCount(string, c) {
  */
 function largestIncrement(numbers) {
   // Your code here
+  let largest = 0,
+    curr = 0,
+    prev = 0;
+  // numbers.forEach(() => )
 }
 // console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
 
@@ -75,8 +87,9 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   // Your code here
+  //return numbers.findIndex((after) => after.some((num) => num === x));
 }
-// console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+//console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
 /**
  * abbreviate(firstName, lastName):
@@ -91,8 +104,12 @@ function afterX(numbers, x) {
  */
 function abbreviate(firstName, lastName) {
   // Your code here
+  let initials;
+  let in1 = firstName.toUpperCase().split("");
+  let in2 = lastName.toUpperCase().split("");
+  return (initials = in1[0].concat(in2[0]));
 }
-// console.log(abbreviate("miss", "Stephane"));
+console.log(abbreviate("miss", "Stephane"));
 
 /**
  * isUpperCase(string):
@@ -106,9 +123,14 @@ function abbreviate(firstName, lastName) {
  */
 function isUpperCase(string) {
   // Your code here
+  let sent = string.toUpperCase();
+  if (sent === string) {
+    return true;
+  }
+  return false;
 }
 
-// console.log(isUpperCase("JCREW"));
+console.log(isUpperCase("JCREW"));
 
 /**
  * elementInArray(numbers, x):
@@ -122,8 +144,9 @@ function isUpperCase(string) {
  */
 function elementInArray(numbers, x) {
   // Your code here
+  return numbers.some((element) => element === x);
 }
-// console.log(elementInArray([5, 6, 7], 8));
+console.log(elementInArray([5, 6, 7], 8));
 
 module.exports = {
   sumOdds,
